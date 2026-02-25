@@ -7,7 +7,7 @@ public abstract class Pergunta {
     protected List<String> alternativas;
     protected int respostaCorreta;
 
-    //Construtor
+
     public Pergunta(String enunciado, List<String> alternativas, int respostaCorreta) {
         this.enunciado = enunciado;
         this.alternativas = alternativas;
@@ -24,7 +24,7 @@ public abstract class Pergunta {
         return respostaCorreta;
     }
 
-    // metodo para verificar se a resposta está correta
+
     public boolean verificarResposta(int respostaUsuario) {
         return respostaUsuario == respostaCorreta;
     }
