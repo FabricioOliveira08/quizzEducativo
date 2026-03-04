@@ -1,14 +1,20 @@
 package br.quizeducativo.model;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Quiz {
 
     private List<Pergunta> perguntas;
+    private boolean modoAleatorio;
     private int indicePerguntaAtual;
     private int pontuacao;
 
-    public Quiz(List<Pergunta> perguntas){
-        this.perguntas = perguntas;
+    public Quiz(List<Pergunta> perguntas, boolean modoAleatorio) {
+        this.perguntas = new ArrayList<>(perguntas);
+        if (modoAleatorio) {
+            Collections.shuffle(this.perguntas);
+        }
         this.indicePerguntaAtual = 0;
         this.pontuacao = 0;
     }
@@ -22,11 +28,11 @@ public class Quiz {
 
     public boolean verificarResposta(int respostaUsuario){
         Pergunta perguntaAtual = perguntas.get(indicePerguntaAtual - 1);
-        if(perguntaAtual.verificarResposta(respostaUsuario)){
+        boolean acertou = perguntaAtual.verificarResposta(respostaUsuario);
+        if(acertou){
             pontuacao++;
-            return true;
         }
-        return false;
+        return acertou;
     }
 
     public int getPontuacao() {

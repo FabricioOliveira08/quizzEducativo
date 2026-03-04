@@ -1,7 +1,9 @@
 package br.quizeducativo.model;
+import javafx.scene.Node;
+
 import java.util.List;
 
-public abstract class Pergunta {
+public abstract class   Pergunta {
 
     protected String enunciado;
     protected List<String> alternativas;
@@ -29,5 +31,5 @@ public abstract class Pergunta {
         return respostaUsuario == respostaCorreta;
     }
 
-    public abstract void exibirPergunta();
+    public abstract Node exibirPergunta();
 }

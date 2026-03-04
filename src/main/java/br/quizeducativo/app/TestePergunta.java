@@ -12,26 +12,33 @@ public class TestePergunta {
         Pergunta p3 = new PerguntaTexto("Qual linguagem estamos usando?", List.of("Python", "Java", "C++", "PHP"), 1);
 
 
-        List<Pergunta> lista = List.of(p1, p2, p3);
+        List<Pergunta> listaPerguntas = List.of(p1, p2, p3);
 
-        Quiz quiz = new Quiz(lista);
+        Quiz quiz = new Quiz(listaPerguntas, true);
+
+        System.out.println("__________ iniciando quiz _____________");
 
         while(!quiz.terminou()) {
-            Pergunta atual = quiz.getPerguntaAtual();
+            Pergunta perguntaAtual = quiz.proximaPergunta();
 
-            atual.exibirPergunta();
+            if(perguntaAtual != null) {
+                perguntaAtual.exibirPergunta();
 
-            int respostaSimulada = 1;
+                int respostaSimulada = 1;
 
-            System.out.println("Resposta escolhida: " + respostaSimulada);
+                System.out.println("Resposta escolhida: " + respostaSimulada);
+                boolean acertou = quiz.verificarResposta(respostaSimulada);
 
-            quiz.responderPerguntas(respostaSimulada);
-
-            System.out.println("----------------------------");
+                if(acertou) {
+                    System.out.println("Resposta correta");
+                }else{
+                    System.out.println("Resposta errada");
+                }
+            }
         }
 
         System.out.println("Quiz finalizado!");
         System.out.println("Pontuação final: " + quiz.getPontuacao());
-        System.out.println("Total de perguntas: " + lista.size());
+        System.out.println("Total de perguntas: " + quiz.getTotalPerguntas());
     }
 }
