@@ -1,0 +1,6 @@
+TIPO;ENUNCIADO;ALTERNATIVAS;INDICE_CORRETA;CAMINHO_IMAGEM
+TEXTO;Você precisa dar 3 pulos no mesmo lugar. Qual estrutura é mais indicada quando já sabemos a quantidade exata de repetições?;if|while|for|switch;2;vazio
+TEXTO;O laço 'while' (enquanto) repete uma ação até que uma condição seja...;Falsa|Verdadeira|Apagada|Infinita;0;vazio
+IMAGEM;Observe o código na imagem. Quantas vezes a palavra 'Olá' vai aparecer na tela?;1 vez|3 vezes|5 vezes|Nenhuma vez;1;/images/loop_for.png
+TEXTO;Qual peça do mundo real funciona mais como um laço de repetição?;Uma porta que abre e fecha uma vez|Um relógio cuco que bate a cada hora|Uma cadeira|Um copo d'água;1;vazio
+IMAGEM;Se a variável 'energia' começa em 10, o que acontece nesse laço 'while(energia > 0)'?;O personagem ganha vida|A energia diminui até zero|A energia aumenta para sempre|O jogo trava;1;/images/while_energia.png

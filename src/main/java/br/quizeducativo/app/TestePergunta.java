@@ -1,44 +1,38 @@
 package br.quizeducativo.app;
-import br.quizeducativo.model.*;
+
+import br.quizeducativo.exception.ArquivoPerguntasException;
+import br.quizeducativo.model.Pergunta;
+import br.quizeducativo.model.PerguntaImagem;
+import br.quizeducativo.util.LeitorPergunta;
+
 import java.util.List;
 
 public class TestePergunta {
     public static void main(String[] args) {
+        System.out.println("Iniciando o teste de leitura do arquivo CSV");
 
-        Pergunta p1 = new PerguntaTexto("Qual é a capital da frança?",List.of("Paris", "Londres", "Roma", "Berlim"), 0);
+        try{
+            List<Pergunta> perguntasCarregadas = LeitorPergunta.carregarPerguntas();
+            System.out.println("Sucesso! Foram carregadas " + perguntasCarregadas.size() + " perguntas.\n");
 
-        Pergunta p2 = new PerguntaTexto("quanto é 5 + 3?", List.of("6", "7", "8", "9"), 2);
+            for(int i = 0; i < perguntasCarregadas.size(); i++) {
+                Pergunta p = perguntasCarregadas.get(i);
 
-        Pergunta p3 = new PerguntaTexto("Qual linguagem estamos usando?", List.of("Python", "Java", "C++", "PHP"), 1);
+                System.out.println("--- Pergunta " + (i + 1) + " ---");
+                System.out.println("Enunciado: " + p.getEnunciado());
+                System.out.println("Alternativas: " + p.getAlternativas());
+                System.out.println("Índice Resposta Correta: " + p.getRespostaCorreta());
 
-
-        List<Pergunta> listaPerguntas = List.of(p1, p2, p3);
-
-        Quiz quiz = new Quiz(listaPerguntas, true);
-
-        System.out.println("__________ iniciando quiz _____________");
-
-        while(!quiz.terminou()) {
-            Pergunta perguntaAtual = quiz.proximaPergunta();
-
-            if(perguntaAtual != null) {
-                perguntaAtual.exibirPergunta();
-
-                int respostaSimulada = 1;
-
-                System.out.println("Resposta escolhida: " + respostaSimulada);
-                boolean acertou = quiz.verificarResposta(respostaSimulada);
-
-                if(acertou) {
-                    System.out.println("Resposta correta");
+                if(p instanceof PerguntaImagem) {
+                    System.out.println("Tipo detectado: IMAGEM");
                 }else{
-                    System.out.println("Resposta errada");
+                        System.out.println("Tipo detectado: TEXTO");
                 }
+                System.out.println("----------------------\n");
             }
+        }catch (ArquivoPerguntasException e) {
+            System.err.println("Erro ao carregar as perguntas: " + e.getMessage());
+            e.printStackTrace();
         }
-
-        System.out.println("Quiz finalizado!");
-        System.out.println("Pontuação final: " + quiz.getPontuacao());
-        System.out.println("Total de perguntas: " + quiz.getTotalPerguntas());
     }
 }

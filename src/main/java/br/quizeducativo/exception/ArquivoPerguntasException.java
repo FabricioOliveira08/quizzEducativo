@@ -1,4 +1,7 @@
 package br.quizeducativo.exception;
 
-public class ArquivoPerguntasException {
+public class ArquivoPerguntasException extends Exception {
+    public ArquivoPerguntasException(String mensagem) {
+        super(mensagem);
+    }
 }

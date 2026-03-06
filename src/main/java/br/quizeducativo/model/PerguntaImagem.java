@@ -15,7 +15,7 @@ public class PerguntaImagem extends Pergunta {
                           int indiceRespostaCorreta,
                           String caminhoImagem) {
         super(enunciado, alternativas, indiceRespostaCorreta);
-        this.caminhoImagem = "caminhoImagem";
+        this.caminhoImagem = caminhoImagem;
     }
     @Override
     public Node exibirPergunta() {
