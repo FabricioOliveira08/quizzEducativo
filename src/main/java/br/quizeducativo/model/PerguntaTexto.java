@@ -4,6 +4,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
 import javafx.scene.Node;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 
 public class PerguntaTexto extends Pergunta{
 
@@ -12,18 +14,36 @@ public class PerguntaTexto extends Pergunta{
                          int respostaCorreta) {
         super(enunciado, alternativas, respostaCorreta);
     }
+
+    private ToggleGroup grupoOpcoes;
+
     @Override
     public Node exibirPergunta(){
 
-        VBox layout = new VBox(10);
-        Label labelEnunciado = new Label(enunciado);
-        layout.getChildren().add(labelEnunciado);
+        VBox caixaPergunta = new VBox(15);
+        Label labelEnunciado = new Label(getEnunciado());
+        labelEnunciado.setWrapText(true);
+        labelEnunciado.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
+        caixaPergunta.getChildren().add(labelEnunciado);
 
+        this.grupoOpcoes = new ToggleGroup();
+
+        alternativas = getAlternativas();
         for (int i = 0; i < alternativas.size(); i++) {
-            Button botaoAlternativa = new Button(alternativas.get(i));
-            layout.getChildren().add(botaoAlternativa);
+            RadioButton rb = new RadioButton(alternativas.get(i));
+            rb.setToggleGroup(grupoOpcoes);
+            rb.setStyle("-fx-font-size: 14px;");
+            rb.setUserData(i);
+            caixaPergunta.getChildren().add(rb);
         }
-        return layout;
+        return caixaPergunta;
     }
 
+    public int obterRespostaSelecionada() {
+        if (grupoOpcoes == null || grupoOpcoes.getSelectedToggle() == null) {
+            return -1; // Nenhuma opção foi marcada
+        }
+        // Recupera aquele índice que escondemos no setUserData
+        return (int) grupoOpcoes.getSelectedToggle().getUserData();
+    }
 }

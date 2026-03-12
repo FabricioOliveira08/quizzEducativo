@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="550.0" prefWidth="700.0"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="br.quizeducativo.controller.TelaQuizController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" style="-fx-border-color: #cccccc; -fx-border-width: 0 0 1 0;" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+            </padding>
+            <Label fx:id="labelJogador" text="Jogador: [Nome]">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                <Label fx:id="labelPontos" text="Pontos: [00]">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </HBox>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox fx:id="containerPergunta" alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+            </padding>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" style="-fx-border-color: #cccccc; -fx-border-width: 1 0 0 0;" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+            </padding>
+            <Button fx:id="btnNext" onAction="#acaoBotaoNext" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="Next -&gt;" />
+        </HBox>
+    </bottom>
+</BorderPane>

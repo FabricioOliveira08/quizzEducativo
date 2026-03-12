@@ -4,7 +4,7 @@ import javafx.scene.Node;
 import java.util.List;
 
 public abstract class   Pergunta {
-
+    public abstract int obterRespostaSelecionada();
     protected String enunciado;
     protected List<String> alternativas;
     protected int respostaCorreta;

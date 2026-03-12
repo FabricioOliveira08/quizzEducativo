@@ -50,6 +50,9 @@ public class TelaInicialController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaQuiz.fxml"));
             Parent root = loader.load();
 
+            TelaQuizController controllerDestino = loader.getController();
+            controllerDestino.iniciarJogo(jogador);
+
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             Scene scene = new Scene(root);

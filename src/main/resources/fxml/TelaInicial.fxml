@@ -7,35 +7,23 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+<VBox alignment="CENTER" prefHeight="450.0" prefWidth="600.0" spacing="20.0"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="br.quizeducativo.controller.TelaInicialController">
 
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
+    <Label text="Quiz Educativo: Laços de Repetição" textAlignment="CENTER">
+        <font>
+            <Font name="System Bold" size="28.0" />
+        </font>
+        <VBox.margin>
+            <Insets bottom="30.0" />
+        </VBox.margin>
+    </Label>
 
-    <children>
-        <Label text="Quiz Educativo: Laços de Repetição" textAlignment="CENTER" wrapText="true">
-            <font>
-                <Font name="System Bold" size="26.0" />
-            </font>
-        </Label>
+    <TextField fx:id="campoNome" maxWidth="250.0" promptText="Digite seu nome..." />
 
-        <Label text="Bem-vindo(a)! Digite seu nome para começar:" textAlignment="CENTER">
-            <font>
-                <Font size="16.0" />
-            </font>
-        </Label>
+    <Button fx:id="btnIniciar" mnemonicParsing="false" onAction="#iniciarQuiz" prefHeight="40.0" prefWidth="250.0" text="[ Novo Jogo ]" />
 
-        <TextField fx:id="campoNome" maxWidth="300.0" prefHeight="35.0" promptText="Seu nome aqui...">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </TextField>
+    <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" text="[ Ver Resultados ]" />
 
-        <Button fx:id="btnIniciar" mnemonicParsing="false" onAction="#iniciarQuiz"
-                prefHeight="45.0" prefWidth="150.0"
-                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-cursor: hand;"
-                text="COMEÇAR" />
-    </children>
 </VBox>
