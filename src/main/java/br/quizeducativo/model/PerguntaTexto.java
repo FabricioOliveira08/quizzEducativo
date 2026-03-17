@@ -23,7 +23,9 @@ public class PerguntaTexto extends Pergunta{
         VBox caixaPergunta = new VBox(15);
         Label labelEnunciado = new Label(getEnunciado());
         labelEnunciado.setWrapText(true);
-        labelEnunciado.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
+        labelEnunciado.setMaxWidth(450);  // Define a largura máxima para ele saber a hora de quebrar
+        labelEnunciado.setMinHeight(javafx.scene.layout.Region.USE_PREF_SIZE); // Impede o Java de cortar a altura
+        labelEnunciado.getStyleClass().add("enunciado-pergunta");
         caixaPergunta.getChildren().add(labelEnunciado);
 
         this.grupoOpcoes = new ToggleGroup();
@@ -32,7 +34,7 @@ public class PerguntaTexto extends Pergunta{
         for (int i = 0; i < alternativas.size(); i++) {
             RadioButton rb = new RadioButton(alternativas.get(i));
             rb.setToggleGroup(grupoOpcoes);
-            rb.setStyle("-fx-font-size: 14px;");
+            rb.getStyleClass().add("alternativa-radio");
             rb.setUserData(i);
             caixaPergunta.getChildren().add(rb);
         }

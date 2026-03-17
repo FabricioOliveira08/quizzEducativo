@@ -91,7 +91,23 @@ public class TelaQuizController {
     }
 
     private void finalizarQuiz() {
-        System.out.println("Fim de jogo! Pontuação final: " + quiz.getPontuacao());
+       jogador.registrarDesempenho(this.acertos, this.erros, quiz.getPontuacao());
+
+       try {
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaResultado.fxml"));
+           Parent root = loader.load();
+
+           TelaResultadoController controllerDestino = loader.getController();
+           controllerDestino.inicializarResultados(jogador, quiz.getTotalPerguntas());
+
+           Stage stage = (Stage) btnNext.getScene().getWindow();
+           Scene scene = new Scene(root);
+           stage.setScene(scene);
+           stage.show();
+       }  catch (IOException e) {
+           System.err.println("Erro ao carregar a Tela de Resultado: " + e.getMessage());
+           e.printStackTrace();
+       }
     }
 
     private void mostrarErro(String titulo, String mensagem) {

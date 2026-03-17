@@ -28,14 +28,17 @@ public class PerguntaImagem extends Pergunta {
         // 1. Enunciado
         Label labelEnunciado = new Label(getEnunciado());
         labelEnunciado.setWrapText(true);
-        labelEnunciado.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
+        labelEnunciado.setMaxWidth(450);  // Define a largura máxima para ele saber a hora de quebrar
+        labelEnunciado.setMinHeight(javafx.scene.layout.Region.USE_PREF_SIZE); // Impede o Java de cortar a altura
+        labelEnunciado.getStyleClass().add("enunciado-pergunta");
         caixaPergunta.getChildren().add(labelEnunciado);
 
         // 2. Imagem (Lendo da pasta resources)
         try {
             Image imagem = new Image(getClass().getResourceAsStream(caminhoImagem));
             ImageView imageView = new ImageView(imagem);
-            imageView.setFitWidth(400); // Ajuste conforme seu wireframe
+            imageView.setFitWidth(400);  // Largura máxima que a imagem pode ter
+            imageView.setFitHeight(180);
             imageView.setPreserveRatio(true);
             caixaPergunta.getChildren().add(imageView);
         } catch (Exception e) {
@@ -49,7 +52,7 @@ public class PerguntaImagem extends Pergunta {
         for (int i = 0; i < alternativas.size(); i++) {
             RadioButton rb = new RadioButton(alternativas.get(i));
             rb.setToggleGroup(grupoOpcoes);
-            rb.setStyle("-fx-font-size: 14px;");
+            rb.getStyleClass().add("alternativa-radio");
             rb.setUserData(i); // Guarda o índice para checagem
             caixaPergunta.getChildren().add(rb);
         }
@@ -65,5 +68,5 @@ public class PerguntaImagem extends Pergunta {
         return (int) grupoOpcoes.getSelectedToggle().getUserData();
     }
 
-    // getCaminhoImagem()...
+    // falta getCaminhoImagem()...
 }

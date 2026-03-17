@@ -7,23 +7,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="450.0" prefWidth="600.0" spacing="20.0"
-      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="br.quizeducativo.controller.TelaInicialController">
 
-    <Label text="Quiz Educativo: Laços de Repetição" textAlignment="CENTER">
-        <font>
-            <Font name="System Bold" size="28.0" />
-        </font>
-        <VBox.margin>
-            <Insets bottom="30.0" />
-        </VBox.margin>
-    </Label>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
 
-    <TextField fx:id="campoNome" maxWidth="250.0" promptText="Digite seu nome..." />
+    <children>
+        <Label styleClass="titulo" text="Quiz Educativo: Laços de Repetição" textAlignment="CENTER" wrapText="true" />
 
-    <Button fx:id="btnIniciar" mnemonicParsing="false" onAction="#iniciarQuiz" prefHeight="40.0" prefWidth="250.0" text="[ Novo Jogo ]" />
+        <Label styleClass="subtitulo" text="Bem-vindo(a)! Digite seu nome para começar:" textAlignment="CENTER" />
 
-    <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" text="[ Ver Resultados ]" />
+        <TextField fx:id="campoNome" maxWidth="300.0" prefHeight="35.0" promptText="Seu nome aqui..." styleClass="campo-texto" />
+
+        <Button fx:id="btnIniciar" mnemonicParsing="false" onAction="#iniciarQuiz" prefHeight="45.0" prefWidth="150.0" styleClass="button" text="COMEÇAR" />
+    </children>
 
 </VBox>

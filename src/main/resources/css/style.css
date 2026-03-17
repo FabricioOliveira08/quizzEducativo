@@ -1,0 +1,70 @@
+/* Fundo geral: um tom de roxo extremamente claro, quase branco, para não cansar a vista */
+.root {
+    -fx-background-color: #f7f4fb;
+    -fx-font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+.titulo {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
+.subtitulo {
+    -fx-font-size: 16px;
+    -fx-text-fill: #000000;
+}
+.campo-texto {
+    -fx-font-size: 14px;
+    -fx-border-color: #553199;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.button {
+    -fx-background-color: #d3fc72;
+    -fx-text-fill: #553199;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #bde45b;
+}
+
+/* texto da pergunta */
+.enunciado-pergunta {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* p/ deixar a alternativa marcada */
+.alternativa-radio {
+    -fx-font-size: 14px;
+    -fx-text-fill: #34495e;
+}
+
+.cartao {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(85, 49, 153, 0.15), 15, 0, 0, 5);
+    -fx-padding: 30;
+}
+/* --- Estilos para a Tela de Resultados --- */
+
+.caixa-pontuacao {
+    -fx-background-color: #f7f4fb;
+    -fx-background-radius: 15;
+    -fx-border-color: #d3fc72;
+    -fx-border-radius: 15;
+    -fx-border-width: 3;
+    -fx-padding: 30 50 30 50;
+}
+
+.pontuacao-gigante {
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #553199;
+}
