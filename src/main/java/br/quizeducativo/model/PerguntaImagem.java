@@ -37,7 +37,7 @@ public class PerguntaImagem extends Pergunta {
         try {
             Image imagem = new Image(getClass().getResourceAsStream(caminhoImagem));
             ImageView imageView = new ImageView(imagem);
-            imageView.setFitWidth(400);  // Largura máxima que a imagem pode ter
+            imageView.setFitWidth(400);
             imageView.setFitHeight(180);
             imageView.setPreserveRatio(true);
             caixaPergunta.getChildren().add(imageView);
@@ -61,11 +61,30 @@ public class PerguntaImagem extends Pergunta {
     }
 
     @Override
+    public boolean temRespostaSelecionada() {
+        return this.grupoOpcoes != null && this.grupoOpcoes.getSelectedToggle() != null;
+    }
+
+    @Override
     public int obterRespostaSelecionada() {
-        if (grupoOpcoes == null || grupoOpcoes.getSelectedToggle() == null) {
+        if (!temRespostaSelecionada()) {
             return -1;
         }
         return (int) grupoOpcoes.getSelectedToggle().getUserData();
+    }
+
+    @Override
+    public boolean validarResposta() {
+        return obterRespostaSelecionada() == getRespostaCorreta();
+    }
+
+    @Override
+    public void travarInteracao() {
+        if (this.grupoOpcoes != null) {
+            for (javafx.scene.control.Toggle toggle : this.grupoOpcoes.getToggles()) {
+                ((javafx.scene.control.RadioButton) toggle).setDisable(true);
+            }
+        }
     }
 
     // falta getCaminhoImagem()...

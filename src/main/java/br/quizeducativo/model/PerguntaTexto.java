@@ -1,6 +1,6 @@
 package br.quizeducativo.model;
 import java.util.List;
-import javafx.scene.control.Button;
+
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
 import javafx.scene.Node;
@@ -41,11 +41,30 @@ public class PerguntaTexto extends Pergunta{
         return caixaPergunta;
     }
 
+    @Override
+    public boolean temRespostaSelecionada() {
+        return this.grupoOpcoes != null && this.grupoOpcoes.getSelectedToggle() != null;
+    }
+
+    @Override
     public int obterRespostaSelecionada() {
-        if (grupoOpcoes == null || grupoOpcoes.getSelectedToggle() == null) {
-            return -1; // Nenhuma opção foi marcada
+        if (!temRespostaSelecionada()) {
+            return -1;
         }
-        // Recupera aquele índice que escondemos no setUserData
         return (int) grupoOpcoes.getSelectedToggle().getUserData();
+    }
+
+    @Override
+    public boolean validarResposta() {
+        return obterRespostaSelecionada() == getRespostaCorreta();
+    }
+
+    @Override
+    public void travarInteracao() {
+        if (this.grupoOpcoes != null) {
+            for (javafx.scene.control.Toggle toggle : this.grupoOpcoes.getToggles()) {
+                ((javafx.scene.control.RadioButton) toggle).setDisable(true);
+            }
+        }
     }
 }

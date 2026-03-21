@@ -11,6 +11,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+import java.util.List;
+import br.quizeducativo.util.dao.RankingDAO;
 
 import java.io.IOException;
 
@@ -62,5 +65,24 @@ public class TelaInicialController {
             System.err.println("Erro ao carregar a Tela do Quiz: " + e.getMessage());
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void verRanking(ActionEvent event) {
+        RankingDAO dao = new RankingDAO();
+        List<String> top5 = dao.obterTop5Ranking();
+
+        Alert alerta = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+        alerta.setTitle("Top 5 Jogadores");
+        alerta.setHeaderText("🏆 Ranking dos Melhores Jogadores 🏆");
+
+        if (top5.isEmpty()) {
+            alerta.setContentText("Ainda não há registos. Seja o primeiro a jogar!");
+        } else {
+            String textoRanking = String.join("\n", top5);
+            alerta.setContentText(textoRanking);
+        }
+
+        alerta.showAndWait();
     }
 }

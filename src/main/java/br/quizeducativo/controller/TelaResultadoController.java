@@ -1,6 +1,7 @@
 package br.quizeducativo.controller;
 
 import br.quizeducativo.model.Jogador;
+import br.quizeducativo.util.dao.RankingDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -32,6 +33,9 @@ public class TelaResultadoController {
         labelNome.setText(jogador.getNome());
 
         labelSuaPontuacao.setText(jogador.getPontuacaoFinal() + " / " + totalPerguntas);
+
+        RankingDAO dao = new RankingDAO();
+        dao.salvarResultado(jogador, totalPerguntas);
     }
 
     @FXML
