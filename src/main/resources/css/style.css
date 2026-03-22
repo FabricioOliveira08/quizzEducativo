@@ -1,16 +1,15 @@
-/* Fundo geral: um tom de roxo extremamente claro, quase branco, para não cansar a vista */
 .root {
-    -fx-background-color: #f7f4fb;
+    -fx-background-color: #FFF9C4;
     -fx-font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 .titulo {
+    -fx-text-fill: #553199;
     -fx-font-size: 26px;
     -fx-font-weight: bold;
-    -fx-text-fill: #000000;
 }
 .subtitulo {
     -fx-font-size: 16px;
-    -fx-text-fill: #000000;
+    -fx-text-fill: #553199;
 }
 .campo-texto {
     -fx-font-size: 14px;
@@ -20,7 +19,7 @@
 }
 
 .button {
-    -fx-background-color: #d3fc72;
+    -fx-background-color: #FFC107;
     -fx-text-fill: #553199;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
@@ -29,7 +28,7 @@
 }
 
 .button:hover {
-    -fx-background-color: #bde45b;
+    -fx-background-color: #FFC130;
 }
 
 /* texto da pergunta */
@@ -44,22 +43,19 @@
     -fx-font-size: 14px;
     -fx-text-fill: #34495e;
 }
-
+/* cartão central */
 .cartao {
-    -fx-background-color: white;
-    -fx-background-radius: 15;
-    -fx-border-radius: 15;
-    -fx-effect: dropshadow(three-pass-box, rgba(85, 49, 153, 0.15), 15, 0, 0, 5);
-    -fx-padding: 30;
+    -fx-background-color: transparent;
+    -fx-padding: 30 50 30 50;
 }
 /* --- Estilos para a Tela de Resultados --- */
 
 .caixa-pontuacao {
-    -fx-background-color: #f7f4fb;
+    -fx-background-color: #FFF9C4;
     -fx-background-radius: 15;
-    -fx-border-color: #d3fc72;
+    -fx-border-color: #FFC107;
     -fx-border-radius: 15;
-    -fx-border-width: 3;
+    -fx-border-width: 2;
     -fx-padding: 30 50 30 50;
 }
 
@@ -67,4 +63,50 @@
     -fx-font-size: 50px;
     -fx-font-weight: bold;
     -fx-text-fill: #553199;
+}
+/* TELA DE INTRODUÇÃO */
+.cartao-introducao {
+    -fx-padding: 20;
+}
+
+.texto-introducao {
+    -fx-font-size: 18px;
+    -fx-text-fill: #4a4a4a;
+}
+
+/* Base comum para os cards (FOR e WHILE) */
+.card-laco {
+    -fx-background-color: #FFF9C4;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-padding: 20;
+    -fx-border-color:#553199;
+    -fx-border-width: 2;
+}
+
+/* Textos de dentro dos cards */
+.titulo-laco {
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-text-fill: #553199;
+}
+
+.texto-laco {
+    -fx-font-size: 15px;
+}
+
+.exemplo-laco {
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-text-fill: #333333;
+}
+
+.emoji-laco {
+    -fx-font-size: 26px;
+}
+
+/* Botão grande de iniciar */
+.btn-gamificado {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
 }

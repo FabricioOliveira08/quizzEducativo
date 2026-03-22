@@ -1,6 +1,5 @@
 TIPO;ENUNCIADO;ALTERNATIVAS;INDICE_CORRETA;CAMINHO_IMAGEM
-TEXTO;Você precisa dar 3 pulos no mesmo lugar. Qual estrutura é mais indicada quando já sabemos a quantidade exata de repetições?;if|while|for|switch;2;vazio
-TEXTO;O laço 'while' (enquanto) repete uma ação até que uma condição seja...;Falsa|Verdadeira|Apagada|Infinita;0;vazio
-IMAGEM;Observe o código na imagem. Quantas vezes a palavra 'Olá' vai aparecer na tela?;1 vez|3 vezes|5 vezes|Nenhuma vez;1;/images/loop_for.png
-TEXTO;Qual peça do mundo real funciona mais como um laço de repetição?;Uma porta que abre e fecha uma vez|Um relógio cuco que bate a cada hora|Uma cadeira|Um copo d'água;1;vazio
-IMAGEM;Se a variável 'energia' começa em 10, o que acontece nesse laço 'while(energia > 0)'?;O personagem ganha vida|A energia diminui até zero|A energia aumenta para sempre|O jogo trava;1;/images/while_energia.png
+TEXTO;Uma rã precisa chegar até o lago. Para isso, ela dá um pulo de cada vez, repetindo o movimento várias vezes até chegar ao destino. Esse comportamento da rã é parecido com qual conceito da programação?;Um comando executado apenas uma vez|Um laço de repetição|Um erro no programa|Um tipo de variável;1;vazio
+TEXTO;Durante uma atividade, o professor pede para os alunos baterem palmas 6 vezes seguidas, repetindo o mesmo movimento. Na programação, essa ação se parece com:;Um laço de repetição|Um comando único|Um erro lógico|Um tipo de dado;0;vazio
+IMAGEM;Quantas vezes “Maçã” aparece?;1 vez|2 vezes|3 vezes|Nenhuma;1;/images/while_maca.png
+IMAGEM;O que será mostrado na tela?;Nada|“Passo” 1 vez|“Passo” 3 vezes|Um erro;2;/images/for_passos.png

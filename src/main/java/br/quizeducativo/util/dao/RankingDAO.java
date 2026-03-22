@@ -36,13 +36,20 @@ public class RankingDAO {
         try (BufferedReader br = new BufferedReader(new FileReader(CAMINHO_ARQUIVO))){
             String linha;
             while ((linha = br.readLine()) != null){
-                todasAsLinhas.add(linha.split(";"));
+                if(linha.trim().isEmpty() || !linha.contains(";")){
+                    continue;
+                }
+                String[] dados = linha.split(";");
+
+                if(dados.length >= 2) {
+                    todasAsLinhas.add(dados);
+                }
             }
         } catch (IOException e) {
             return top5Formatado;
         }
 
-        todasAsLinhas.sort((jogadorA, jogadorB) -> Integer.compare(Integer.parseInt(jogadorB[1]),  Integer.parseInt(jogadorA[1])));
+        todasAsLinhas.sort((jogadorA, jogadorB) -> Integer.compare(Integer.parseInt(jogadorB[1]), Integer.parseInt(jogadorA[1])));
 
         int limite = Math.min(5, todasAsLinhas.size());
         for (int i = 0; i < limite; i++) {
@@ -51,6 +58,4 @@ public class RankingDAO {
         }
         return top5Formatado;
     }
-
-
 }

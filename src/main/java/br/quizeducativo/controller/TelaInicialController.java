@@ -26,18 +26,28 @@ public class TelaInicialController {
     private Button btnIniciar;
 
     @FXML
-    public void iniciarQuiz(ActionEvent event) {
+    public void irParaIntroducao(ActionEvent event) {
         String nomeDigitado = campoNome.getText();
-
         if(nomeDigitado == null || nomeDigitado.trim().isEmpty()) {
             mostrarAlerta("Atenção", "Por favor, digite seu nome para começar o quiz!");
             return;
         }
 
-        Jogador jogadorAtual = new Jogador(nomeDigitado.trim());
-        System.out.println("Iniciando partida para o jogador: " + jogadorAtual.getNome());
+        Jogador jogador = new Jogador(nomeDigitado);
 
-        mudarParaTelaQuiz(event, jogadorAtual);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaIntroducao.fxml"));
+            Parent root = loader.load();
+
+            TelaIntroducaoController controller = loader.getController();
+            controller.receberJogador(jogador);
+
+            Stage stage = (Stage) btnIniciar.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            System.err.println("Erro ao carregar a introdução: " + e.getMessage());
+        }
     }
 
     private void mostrarAlerta(String titulo, String mensagem) {
@@ -84,5 +94,29 @@ public class TelaInicialController {
         }
 
         alerta.showAndWait();
+    }
+    @FXML
+    public void abrirIntroducao(ActionEvent event) {
+        String nomeDigitado = campoNome.getText();
+        if(nomeDigitado == null || nomeDigitado.trim().isEmpty()) {
+            mostrarAlerta("Atenção", "Por favor, digite seu nome para começar o quiz!");
+            return;
+        }
+
+        Jogador jogador = new Jogador(nomeDigitado);
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaIntroducao.fxml"));
+            Parent root = loader.load();
+
+            TelaIntroducaoController controller = loader.getController();
+            controller.receberJogador(jogador);
+
+            Stage stage = (Stage) btnIniciar.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            System.err.println("Erro ao abrir introdução: " + e.getMessage());
+        }
     }
 }

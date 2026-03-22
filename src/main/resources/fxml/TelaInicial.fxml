@@ -21,7 +21,8 @@
 
         <TextField fx:id="campoNome" maxWidth="300.0" prefHeight="35.0" promptText="Seu nome aqui..." styleClass="campo-texto" />
 
-        <Button fx:id="btnIniciar" mnemonicParsing="false" onAction="#iniciarQuiz" prefHeight="45.0" prefWidth="150.0" styleClass="button" text="COMEÇAR" />
+        <Button mnemonicParsing="false" onAction="#abrirIntroducao" prefHeight="45.0" prefWidth="150.0" styleClass="button" text="INTRODUÇÃO" />
+        <Button fx:id="btnIniciar" mnemonicParsing="false" onAction="#irParaIntroducao" prefHeight="45.0" prefWidth="150.0" styleClass="button" text="COMEÇAR" />
         <Button mnemonicParsing="false" onAction="#verRanking" prefHeight="45.0" prefWidth="150.0"  styleClass="button" text="VER RANKING" />
     </children>
 
