@@ -32,4 +32,8 @@ public abstract class Pergunta implements QuestaoInterativa {
     }
 
     public abstract Node exibirPergunta();
+
+    public boolean validarResposta() {
+        return obterRespostaSelecionada() == getRespostaCorreta();
+    }
 }

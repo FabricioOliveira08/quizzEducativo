@@ -23,6 +23,15 @@ public class TelaInicialController {
     private TextField campoNome;
 
     @FXML
+    public void initialize() {
+       campoNome.textProperty().addListener((observavel, valorAntigo, valorNovo) -> {
+            if (!valorNovo.matches("[a-zA-ZÀ-ÿ ]*")) {
+                campoNome.setText(valorNovo.replaceAll("[^a-zA-ZÀ-ÿ ]", ""));
+            }
+        });
+    }
+
+    @FXML
     private Button btnIniciar;
 
     @FXML

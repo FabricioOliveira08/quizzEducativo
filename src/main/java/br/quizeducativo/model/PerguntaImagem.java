@@ -87,5 +87,5 @@ public class PerguntaImagem extends Pergunta {
         }
     }
 
-    // falta getCaminhoImagem()...
+
 }
