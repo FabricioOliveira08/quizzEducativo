@@ -9,7 +9,6 @@ import java.util.List;
 
 public class TestePergunta {
     public static void main(String[] args) {
-        System.out.println("Iniciando o teste de leitura do arquivo CSV");
 
         try{
             List<Pergunta> perguntasCarregadas = LeitorPergunta.carregarPerguntas();

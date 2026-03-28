@@ -1,16 +1,13 @@
 TIPO;ENUNCIADO;ALTERNATIVAS;INDICE_CORRETA;CAMINHO_IMAGEM
 TEXTO;Durante uma atividade, o professor pede para os alunos baterem palmas 6 vezes seguidas, repetindo o mesmo movimento. Na programação, essa ação se parece com:;Um laço com repetição|Um comando único|Um erro lógico|Um tipo de dado;0;vazio
 TEXTO;Uma rã precisa chegar até o lago. Para isso, ela dá um pulo de cada vez, repetindo o movimento várias vezes até chegar ao destino. Esse comportamento da rã é parecido com qual conceito da programação?;Um comando executado apenas uma vez|Um laço de repetição|Um erro no programa|Um tipo de variável;1;vazio
-TEXTO;Um aluno está treinando corrida e precisa dar exatamente 5 voltas na quadra. Ele sabe desde o início quantas voltas precisa completar. Qual tipo de estrutura melhor representa essa situação?;Laço com condição (while)|Laço com número indefinido|Laço com quantidade definida (for)|Nenhuma repetição;2;vazio
 TEXTO;Um robô foi programado para andar em linha reta até encontrar uma parede. Ele não sabe quando vai parar, pois depende do ambiente. Esse tipo de repetição é melhor representado por:;Um laço com número fixo|Um laço com condição|Um comando único|Um erro de programação;1;vazio
 TEXTO;Um estudante escreveu um programa que deveria contar de 1 até 10. Porém, ele esqueceu de alterar a variável de controle dentro do laço, fazendo com que o programa nunca pare. Esse problema é conhecido como:;Laço com condição|Laço correto|Laço infinito|Variável inválida;2;vazio
 TEXTO;Uma pessoa bebe um gole de suco várias vezes até o copo ficar vazio. Esse exemplo mostra:;Um laço de repetição|Um comando único|Um erro|Um número;0;vazio
 TEXTO;Uma pessoa continua bebendo água enquanto ainda está com sede. Quando a sede acaba, ela para automaticamente. Na programação, esse comportamento é semelhante a:;Um laço infinito|Um laço com quantidade definida|Um comando único|Um laço controlado por condição;3;vazio
 TEXTO;Em um jogo, o personagem continua correndo enquanto o jogador mantém o botão pressionado. Assim que o botão é solto, o personagem para. Esse tipo de lógica é um exemplo de:;Laço com número fixo|Laço controlado por condição|Laço infinito|Nenhuma repetição;1;vazio
-IMAGEM;Quantas vezes “Maçã” aparece?;1 vez|2 vezes|3 vezes|Nenhuma;1;/images/while_maca.png
-IMAGEM;Esse código repete uma ação. O que será mostrado na tela?;Nada|“Passo” 1 vez|Um erro|“Passo” 3 vezes;3;/images/for_passos.png
-IMAGEM;O que acontece ao executar esse código?;Mostra “Oi” 3 vezes|Mostra “Oi” 1 vez| Mostra “Oi” para sempre|Não mostra nada;0;/images/while_oi.png
-IMAGEM;O que acontece?;Mostra 1 vez|Mostra 3 vezes|Mostra infinitamente|Não executa;1;/images/while_copos.png
-IMAGEM;O que será mostrado?;1 2 3|0 1 2|3 2 1|Nada;1;/images/for_tres.png
-IMAGEM;O que aparece?;X|X X|X X X|Nada;2;/images/for_x.png
-IMAGEM;Quantas vezes aparece “Pulo”?;1 vez|2 vezes|3 vezes|Nenhuma;0;/images/for_pulo.png
+TEXTO;Em um jogo, o personagem continua correndo enquanto o jogador segura o botão. Isso representa:;Uma ação sem repetição|Um tipo de número|Um erro do sistema|Uma repetição controlada;3;vazio
+TEXTO;Qual das situações abaixo representa melhor o uso de repetição na programação?;Guardar o nome de uma pessoa|Repetir uma mesma ação várias vezes|Comparar duas opções|Escolher entre verdadeiro ou falso;1;vazio
+TEXTO;Uma música continua tocando até alguém apertar o botão de parar. Esse exemplo representa:;Uma repetição controlada|Um comando sem repetição|Um tipo de variável|Um erro no sistema;0;vazio
+TEXTO;Quando uma repetição não tem fim, ela pode causar:;Encerramento automático correto|Laço infinito|Conversão de dados|Criação de texto;1;vazio
+TEXTO;Quando usamos repetição em um programa, normalmente queremos:;Fazer a mesma tarefa várias vezes|Apagar todas as variáveis|Encerrar o programa imediatamente|Trocar números por letras;0;vazio

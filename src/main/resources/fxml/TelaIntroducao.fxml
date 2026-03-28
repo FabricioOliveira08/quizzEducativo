@@ -2,62 +2,61 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 
-<VBox alignment="CENTER" prefHeight="650.0" prefWidth="850.0"
+<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1000.0"
       stylesheets="@../css/style.css" styleClass="root"
       xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="br.quizeducativo.controller.TelaIntroducaoController">
 
-    <VBox alignment="CENTER" maxWidth="750.0" spacing="25.0" styleClass="cartao, cartao-introducao">
+    <VBox alignment="CENTER" maxWidth="850.0" spacing="15.0" styleClass="cartao, cartao-introducao">
 
-        <Label styleClass="titulo" text="O Superpoder da Repetição! ⚡" />
-        <Label wrapText="true" textAlignment="CENTER" styleClass="texto-introducao"
-               text="Imagine que você está num videogame e precisa pegar 100 moedas. Em vez de apertar o botão 'Pegar' 100 vezes, nós usamos os Loops! Eles mandam o computador repetir a tarefa sozinho." />
+        <Label styleClass="titulo" style="-fx-font-size: 32px;" text="O Superpoder da Repetição!" />
+        <Region prefHeight="5.0" />
 
-        <Region prefHeight="10.0" />
+        <HBox alignment="CENTER_LEFT" spacing="20.0" styleClass="painel-tutorial, painel-problema" maxWidth="750.0">
+            <ImageView fitHeight="70.0" preserveRatio="true">
+                <image>
+                    <Image url="@../images/icone_cansado.png" />
+                </image>
+            </ImageView>
 
-        <HBox alignment="CENTER" spacing="30.0">
-
-            <VBox alignment="TOP_CENTER" prefWidth="420.0" spacing="15.0" styleClass="card-laco">
-                <Label text="🎯 O 'FOR' (Para)" styleClass="titulo-laco"/>
-                <Label wrapText="true" textAlignment="CENTER" text="Usamos quando sabemos a quantidade exata." styleClass="texto-laco"/>
-
-                <Region prefHeight="5.0" />
-
-                <Label wrapText="true" textAlignment="CENTER" text="Ex.: 'Dê exatamente 5 pulos!'" styleClass="exemplo-laco"/>
-                <ImageView fitHeight="80.0" preserveRatio="true">
-                    <image>
-                        <Image url="@../images/for_pular.png" />
-                    </image>
-                </ImageView>
+            <VBox spacing="5.0">
+                <Label text="O Jeito Cansativo:" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #e65c5c;" />
+                <Label wrapText="true" prefWidth="550.0" style="-fx-font-size: 20px; -fx-text-fill: #555555;"
+                       text="Imagine o professor dizendo: 'Faça uma flexão', 'faça outra', 'mais uma'... Ou um Robô que quer desenhar um quadrado no chão. Você teria que dizer: 'Vá em frente, vire à direita. Vá em frente, vire à direita... Muito chato e repetitivo, né?" />
             </VBox>
+        </HBox>
 
-            <VBox alignment="TOP_CENTER" prefWidth="420.0" spacing="15.0" styleClass="card-laco">
-                <Label text="🔋 O 'WHILE' (Enquanto)" styleClass="titulo-laco"/>
-                <Label wrapText="true" textAlignment="CENTER" text="Usamos quando queremos repetir até algo acontecer." styleClass="texto-laco"/>
 
-                <Region prefHeight="5.0" />
+        <ImageView fitHeight="35.0" preserveRatio="true">
+            <image>
+                <Image url="@../images/icone_seta.png" />
+            </image>
+        </ImageView>
 
-                <Label wrapText="true" textAlignment="CENTER" text="Ex.: 'ande enquanto tiver energia!'" styleClass="exemplo-laco"/>
+        <HBox alignment="CENTER_LEFT" spacing="20.0" styleClass="painel-tutorial, painel-solucao" maxWidth="750.0">
+            <ImageView fitHeight="70.0" preserveRatio="true">
+                <image>
+                    <Image url="@../images/icone_robo.png" />
+                </image>
+            </ImageView>
 
-                <ImageView fitHeight="80.0" preserveRatio="true">
-                    <image>
-                        <Image url="@../images/while_energia.png" />
-                    </image>
-                </ImageView>
+            <VBox spacing="5.0">
+                <Label text="O Superpoder (Laço de Repetição):" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #553199;" />
+                <Label wrapText="true" prefWidth="550.0" style="-fx-font-size: 20px; -fx-text-fill: #333333;"
+                       text="É um comando mágico! Em vez de repetir, você diz uma vez só: 'Faça 10 flexões!' ou 'Robô, repita 4 vezes: Vá em frente, vire à direita!'. O computador faz o trabalho duro por você!" />
             </VBox>
-
         </HBox>
 
         <Region prefHeight="15.0" />
 
         <Button fx:id="btnIniciarQuiz" mnemonicParsing="false" onAction="#iniciarQuiz"
-                prefHeight="55.0" prefWidth="350.0" styleClass="button, btn-gamificado"
-                text="ESTOU PRONTO! 🎮" />
+                prefHeight="60.0" prefWidth="350.0" styleClass="button, btn-gamificado"
+                text="ENTENDI! VAMOS JOGAR" />
     </VBox>
 </VBox>
