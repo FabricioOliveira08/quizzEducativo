@@ -50,4 +50,18 @@ public class Jogador {
         this.erros = erros;
         this.pontuacaoFinal = pontuacaoFinal;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Jogador outroJogador = (Jogador) obj;
+        return this.nome.equals(outroJogador.getNome());
+    }
+
+    @Override
+    public int hashCode() {
+        return nome.hashCode();
+    }
 }
